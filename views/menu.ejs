@@ -6,6 +6,15 @@
     <title>Starbucks's Menu :)</title>
 </head>
 <body>
-    The menu is coming soon... once we figure out how to get more olive oil into it
+    <h1>Starbucks's Menu</h1>
+    <ul>
+        <% for(let i = 0; i < menu.length; i++) { %>
+            <li>
+                <%= menu[i].name %> - $<%= menu[i].price %>
+                
+            </li>
+        <% } %>
+    </ul>
+    <a href="/menu/new">Add New Menu Item</a>
 </body>
 </html>

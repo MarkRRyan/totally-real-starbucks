@@ -15,14 +15,13 @@ db.on('connected', () => console.log('mongoDB is petting some mongoose!'))
 db.on('disconnected', () => console.log('mongo disconnected'))
 
 const app = express();
+app.use(express.urlencoded({extended:true}))
+app.use(express.json())
+
 app.use('/menu', menuController)
 
 app.get('/', (req, res) => {
     res.render('index.ejs')
-})
-
-app.get('/menu', (req, res) => {
-    res.render('menu.ejs')
 })
 
 app.listen(PORT, () => {
